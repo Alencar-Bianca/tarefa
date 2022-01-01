@@ -1,0 +1,11 @@
+<div>
+  <input type="checkbox"  [(ngModel)]="task.completed" (change)="onCompletedChackChange(task)">
+</div>
+
+  <div [innerHTML]="task.description" [ngClass]="task.completed ? 'task-completed' : '' "></div>
+  <div>
+    <button type="button" [routerLink]="['/edit', task.id]" > Alterar</button>
+  </div>
+  <div>
+    <button type="button"  (click)="remove(task)"> Excluir</button>
+  </div>
